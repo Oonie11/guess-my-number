@@ -28,10 +28,20 @@ clickButton.addEventListener("click", () => {
   const guess = Number(document.querySelector(".guess").value);
 
   //conditional statement to compare the userInput with Secret number
+
+  //when there is no number
   if (!guess) {
     document.querySelector(".message").textContent = "⛔️ no number";
   } else if (guess === secretNum) {
     document.querySelector(".message").textContent = "🎉 Correct number !";
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
+    //add high-score
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(".highscore").textContent = highScore;
+    }
+    // when guess is higher then secret number
   } else if (guess > secretNum) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📈 Too high";
@@ -41,6 +51,7 @@ clickButton.addEventListener("click", () => {
       document.querySelector(".message").textContent = "💥 You lost the Game !";
       document.querySelector(".score").textContent = 0;
     }
+    // when guess is higher then secret number
   } else if (guess < secretNum) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📉 Too low";
