@@ -1,9 +1,5 @@
+//to activate the strict mode
 "use strict";
-
-/* document.querySelector(".message").textContent = "🎉 Correct number !";
-document.querySelector(".score").textContent = "99";
-document.querySelector(".number").textContent = "!!";
-document.querySelector(".guess").value = "23"; */
 
 //////-------GAME CACHE-------/////////
 
@@ -14,11 +10,7 @@ let secretNum = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 
-//declaring a variable for click button
-const clickButton = document.querySelector(".check");
-
-//TEST FUNCTION
-
+// FUNCTION to SELECT DOM Element and add its value.
 const textSelector = (text, value) => {
   document.querySelector(text).textContent = value;
 };
@@ -26,6 +18,9 @@ const textSelector = (text, value) => {
 ///////////////////////////////////////////////////////////////
 ////////////----------GAME LOGIC------------/////////////
 ///////////////////////////////////////////////////////////////
+
+//declaring a variable for click button
+const clickButton = document.querySelector(".check");
 
 ///////////////////////////////////////////
 //adding event listener on CHECK button
