@@ -9,7 +9,6 @@ document.querySelector(".guess").value = "23"; */
 
 //generating a random number
 const secretNum = Math.trunc(Math.random() * 20) + 1;
-document.querySelector(".number").textContent = secretNum;
 
 //Keeping a score
 let score = 20;
@@ -22,7 +21,9 @@ const clickButton = document.querySelector(".check");
 ////////////----------GAME LOGIC------------/////////////
 ///////////////////////////////////////////////////////////////
 
-//adding event listener to the click button
+///////////////////////////////////////////
+//adding event listener on CHECK button
+//////////////////////////////////////////
 clickButton.addEventListener("click", () => {
   //declaring a variable to store user input
   const guess = Number(document.querySelector(".guess").value);
@@ -34,6 +35,8 @@ clickButton.addEventListener("click", () => {
     document.querySelector(".message").textContent = "⛔️ no number";
   } else if (guess === secretNum) {
     document.querySelector(".message").textContent = "🎉 Correct number !";
+    document.querySelector(".number").textContent = secretNum;
+
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
     //add high-score
@@ -64,4 +67,24 @@ clickButton.addEventListener("click", () => {
   } else {
     document.querySelector(".message").textContent = "Error Found";
   }
+});
+
+///////////////////////////////////////////
+//adding event listener on Again/reset button
+//////////////////////////////////////////
+
+//declaring a variable to select Again button in DOM
+const resetButton = document.querySelector(".again");
+
+//adding event listener to reset (Again) button
+
+resetButton.addEventListener("click", () => {
+  console.log("resetButton was clicked");
+  score = 20;
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".message").textContent = "Start guessing...";
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
