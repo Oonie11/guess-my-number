@@ -76,7 +76,7 @@ resetButton.addEventListener("click", () => {
   textSelector(".score", score);
   textSelector(".number", "?");
   textSelector(".message", "Start guessing...");
-  textSelector(".guess", "");
+  textSelector(".guess", " ");
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
 });
