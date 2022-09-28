@@ -8,7 +8,7 @@ document.querySelector(".guess").value = "23"; */
 //////-------GAME CACHE-------/////////
 
 //generating a random number
-const secretNum = Math.trunc(Math.random() * 20) + 1;
+let secretNum = Math.trunc(Math.random() * 20) + 1;
 
 //Keeping a score
 let score = 20;
@@ -79,8 +79,8 @@ const resetButton = document.querySelector(".again");
 //adding event listener to reset (Again) button
 
 resetButton.addEventListener("click", () => {
-  console.log("resetButton was clicked");
   score = 20;
+  secretNum = Math.trunc(Math.random() * 20) + 1;
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").textContent = "?";
   document.querySelector(".message").textContent = "Start guessing...";
